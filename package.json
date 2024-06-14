@@ -1,0 +1,17 @@
+{
+  "name": "logo",
+  "version": "1.0.0",
+  "description": "my logo",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gabriela siu",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^9.2.23"
+  }
+}

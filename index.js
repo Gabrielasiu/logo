@@ -1,28 +1,29 @@
 // Runs the app using the lib imports
+
+
 // // TODO: Include packages needed for this application
-const inquirer = require ('inquirer');
-//const generateMarkdown = require ('./needed/readmeGenerator.js');
-inquirer.registerPrompt('checkbox-plus', require('./index'));
-const colors =require("colors")
+const inquirer =require ('inquirer');
 const fs = require ('fs');
+//pasar las funcione que escribí en shapes
+//const {Circle, Square, Triangle} = require('./lib/shapes');
 
 // TODO: Create an array of questions for user input
-const shape = ["triangle", "circle", "square"]
 const questions = [
 {
     type: 'input',
-    message: "What's your logo name? Ypu can write UP to 3 letters" ,
-    //name: 'title',
+    message: "Enter up to 3 characters for yout logo" ,
+    name: 'text',
 },
 {
     type: 'input',
-    message: "What color do you want to present your logo's letetrs on",
+    message: "Enter a color keyword or hexadecimal number, for your logo",
     name: 'color'
 },
 {
-    type: 'checkbox-plus',
-    message: "Select the form of your logo" 
-   // name: 'description',
+    type: 'list',
+    message: "Choose the form of your logo",
+    name: 'shape',
+    choices: ["Circle", "Triangle", "Square"]
 }
 ];
 
@@ -30,7 +31,7 @@ function inquireFunc (){
     inquirer
         .prompt(questions)
         .then(function(answers){
-            writeToFile("./lib/shapes.js", answers)
+            writeToFile("./lib/newLogo.svg/logo.svg", answers)
         })
 }
 // TODO: Create a function to create a logo
